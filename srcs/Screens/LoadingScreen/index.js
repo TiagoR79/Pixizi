@@ -1,5 +1,5 @@
 import * as React from 'react';
-import { View, Text, Button } from 'react-native';
+import { View, Text, Button, Image } from 'react-native';
 
 function Loading({ navigation }) {
 	return (
@@ -8,15 +8,15 @@ function Loading({ navigation }) {
 			alignItems: 'center',
 			justifyContent: 'center',
 			backgroundColor: '#00d4aaff'
-			}}>
-			<Text style={{
-				color: 'white',
-				fontSize: 30,
-				fontWeight: 'bold',
-			}}
-			onPress={() => navigation.navigate('Login')}
-			>PIXIZI</Text>
-
+		}}
+		>
+			<Image
+				source={require('../../../assets/logo/logo2.png')}
+				style={{ width: 150, height: 150, alignSelf: 'center' }}
+				/>
+			<Text
+				onPress={() => navigation.navigate('Login')}
+			> skip </Text>
 		</View>
 	);
 }
