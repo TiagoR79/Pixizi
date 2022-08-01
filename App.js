@@ -10,6 +10,7 @@ import HomeScreen from './srcs/Screens/HomeScreen';
 import LoginScreen from './srcs/Screens/LoginScreen';
 import SignUpScreen from './srcs/Screens/SignUpScreen';
 import DetailsScreen from './srcs/Screens/DetailsScreen';
+import NavigationScreen from './srcs/Screens/NavigationScreen';
 
 
 const Stack = createNativeStackNavigator();
@@ -17,7 +18,7 @@ const Stack = createNativeStackNavigator();
 function App() {
 	return (
 		<NavigationContainer>
-			<Stack.Navigator initialRouteName="Home"
+			<Stack.Navigator initialRouteName="Navigation"
 				screenOptions={{
 					headerStyle: {
 					  backgroundColor: '#00d4aaff',
@@ -29,17 +30,47 @@ function App() {
 					headerBackButtonMenuEnabled: true,
 					headerBackVisible: false,
 					title: ''
-				  }}
+				}}
 			>
+				<Stack.Screen
+					name="Navigation"
+					component={NavigationScreen}
+					options={({navigation}) => ({
+						headerLeft: () => (
+							<TouchableOpacity activeOpacity={ .7 } onPress={() => navigation.navigate('Navigation')}>
+								<Image
+									source={require('./assets/settings.png')}
+									style={{ width: 27, height: 27 }}
+								/>
+							</TouchableOpacity>
+						),
+						headerRight: () => (
+							<TouchableOpacity activeOpacity={ .7 } onPress={() => navigation.navigate('Navigation')}>
+								<Image
+									source={require('./assets/profile.png')}
+									style={{ width: 20, height: 25, marginRight: '55%' }}
+								/>
+							</TouchableOpacity>
+						)
+					})}
+				/>
 				<Stack.Screen
 					name="Home"
 					component={HomeScreen}
 					options={({navigation}) => ({
 						headerLeft: () => (
-							<TouchableOpacity activeOpacity={ .7 } onPress={() => navigation.navigate('Home')}>
+							<TouchableOpacity activeOpacity={ .7 } onPress={() => navigation.navigate('Navigation')}>
 								<Image
 									source={require('./assets/settings.png')}
 									style={{ width: 27, height: 27 }}
+								/>
+							</TouchableOpacity>
+						),
+						headerRight: () => (
+							<TouchableOpacity activeOpacity={ .7 } onPress={() => navigation.navigate('Navigation')}>
+								<Image
+									source={require('./assets/profile.png')}
+									style={{ width: 20, height: 25, marginRight: '55%' }}
 								/>
 							</TouchableOpacity>
 						)
@@ -55,7 +86,7 @@ function App() {
 					component={LoginScreen}
 					options={({navigation}) => ({
 						headerLeft: () => (
-							<TouchableOpacity activeOpacity={ .7 } onPress={() => navigation.navigate('Home')}>
+							<TouchableOpacity activeOpacity={ .7 } onPress={() => navigation.navigate('Navigation')}>
 								<Image
 									source={require('./assets/settings.png')}
 									style={{ width: 27, height: 27 }}
@@ -64,7 +95,20 @@ function App() {
 						)
 					})}
 					/>
-				<Stack.Screen name="SignUp" component={SignUpScreen} />
+				<Stack.Screen
+					name="SignUp"
+					component={SignUpScreen}
+					options={({navigation}) => ({
+						headerLeft: () => (
+							<TouchableOpacity activeOpacity={ .7 } onPress={() => navigation.navigate('Navigation')}>
+								<Image
+									source={require('./assets/settings.png')}
+									style={{ width: 27, height: 27 }}
+								/>
+							</TouchableOpacity>
+						)
+					})}
+				/>
 				{/* <Stack.Screen name="" component={} /> */}
 			</Stack.Navigator>
 		</NavigationContainer>
