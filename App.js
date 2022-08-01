@@ -1,7 +1,7 @@
 // In App.js in a new project
 
 import * as React from 'react';
-import { View, Text, Button } from 'react-native';
+import { View, Text, Button, Image, TouchableOpacity } from 'react-native';
 import { NavigationContainer } from '@react-navigation/native';
 import { createNativeStackNavigator } from '@react-navigation/native-stack';
 
@@ -26,7 +26,7 @@ function App() {
 					headerTitleStyle: {
 					  fontWeight: 'bold',
 					},
-					headerBackButtonMenuEnabled: false,
+					headerBackButtonMenuEnabled: true,
 					headerBackVisible: false,
 					title: ''
 				  }}
@@ -34,13 +34,36 @@ function App() {
 				<Stack.Screen
 					name="Home"
 					component={HomeScreen}
-				/>
+					options={({navigation}) => ({
+						headerLeft: () => (
+							<TouchableOpacity activeOpacity={ .7 } onPress={() => navigation.navigate('Home')}>
+								<Image
+									source={require('./assets/settings.png')}
+									style={{ width: 27, height: 27 }}
+								/>
+							</TouchableOpacity>
+						)
+					})}
+					/>
 				<Stack.Screen
 					name="Loading"
 					component={LoadingScreen}
 					/>
 				<Stack.Screen name="Details" component={DetailsScreen} />
-				<Stack.Screen name="Login" component={LoginScreen} />
+				<Stack.Screen
+					name="Login"
+					component={LoginScreen}
+					options={({navigation}) => ({
+						headerLeft: () => (
+							<TouchableOpacity activeOpacity={ .7 } onPress={() => navigation.navigate('Home')}>
+								<Image
+									source={require('./assets/settings.png')}
+									style={{ width: 27, height: 27 }}
+								/>
+							</TouchableOpacity>
+						)
+					})}
+					/>
 				<Stack.Screen name="SignUp" component={SignUpScreen} />
 				{/* <Stack.Screen name="" component={} /> */}
 			</Stack.Navigator>
