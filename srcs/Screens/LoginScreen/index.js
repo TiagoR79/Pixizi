@@ -18,6 +18,7 @@ function LoginScreen({ navigation }) {
 					<TextInput
 						style={{ backgroundColor: 'white', width: '70%', alignSelf: 'center', marginTop: 10, borderRadius: 30, textAlign: 'center' }}
 						placeholder="password"
+						secureTextEntry={true}
 					/>
 					<View style={{ flex: 0.2, flexDirection: 'row', alignItems: 'center', justifyContent: 'space-between', width: '70%', alignSelf: 'center', fontWeight: '500' }}>
 						<TouchableOpacity activeOpacity={ .7 } onPress={() => navigation.navigate('Home')}>
