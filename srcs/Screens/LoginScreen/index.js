@@ -1,5 +1,5 @@
 import * as React from 'react';
-import { View, Text, /* Button ,*/ ImageBackground, Image, TextInput } from 'react-native';
+import { View, Text, /* Button ,*/ ImageBackground, Image, TextInput, TouchableOpacity } from 'react-native';
 import { Button } from '@rneui/base';
 
 //const img = { uri: "https://cdn.discordapp.com/attachments/958318179229257789/1002129999559675924/background.png" };
@@ -18,10 +18,18 @@ function LoginScreen({ navigation }) {
 					<TextInput
 						style={{ backgroundColor: 'white', width: '70%', alignSelf: 'center', marginTop: 10, borderRadius: 30, textAlign: 'center' }}
 						placeholder="password"
+						secureTextEntry={true}
 					/>
 					<View style={{ flex: 0.2, flexDirection: 'row', alignItems: 'center', justifyContent: 'space-between', width: '70%', alignSelf: 'center', fontWeight: '500' }}>
-						<Text style={{ color: '#00d4aaff', fontWeight: '500', fontSize: 15 }} >Forgot Password?</Text>
-						<Text style={{ color: 'white', fontWeight: '500', fontSize: 15 }}>New User? <Text style={{ color: '#00d4aaff', fontWeight: '500', fontSize: 15 }} onPress={() => navigation.navigate('SignUp')}>Sign Up</Text></Text>
+						<TouchableOpacity activeOpacity={ .7 } onPress={() => navigation.navigate('Home')}>
+							<Text style={{ color: '#00d4aaff', fontWeight: '500', fontSize: 15 }} >Forgot Password?</Text>
+						</TouchableOpacity>
+						<View style={{ flexDirection: 'row', alignItems: 'center' }}>
+							<Text style={{ color: 'white', fontWeight: '500', fontSize: 15 }}>New User?</Text>
+							<TouchableOpacity activeOpacity={ .7 } onPress={() => navigation.navigate('Sign Up')}>
+								<Text style={{ color: '#00d4aaff', fontWeight: '500', fontSize: 15 }} onPress={() => navigation.navigate('SignUp')}>Sign Up</Text>
+							</TouchableOpacity>
+						</View>
 					</View>
 				</ImageBackground>
 			</View>
