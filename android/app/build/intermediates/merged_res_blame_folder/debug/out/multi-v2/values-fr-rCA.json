@@ -1,7 +1,7 @@
 {
     "logs": [
         {
-            "outputFile": "/home/tiago/Github/pixizi/android/app/build/intermediates/incremental/mergeDebugResources/merged.dir/values-fr-rCA/values-fr-rCA.xml",
+            "outputFile": "/home/tiago/Desktop/Pixizi/android/app/build/intermediates/incremental/mergeDebugResources/merged.dir/values-fr-rCA/values-fr-rCA.xml",
             "map": [
                 {
                     "source": "/home/tiago/.gradle/caches/transforms-3/a5da391e889210c4d2ba1ae6744f6033/transformed/appcompat-1.4.1/res/values-fr-rCA/values-fr-rCA.xml",
