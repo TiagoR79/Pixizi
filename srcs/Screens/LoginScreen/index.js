@@ -1,11 +1,43 @@
-import * as React from 'react';
+import React, { useState } from 'react';
 import { View, Text, /* Button ,*/ ImageBackground, Image, TextInput, TouchableOpacity } from 'react-native';
 import { Button } from '@rneui/base';
+import { CognitoUser, AuthenticationDetails } from 'amazon-cognito-identity-js';
+import UserPool from '../../utils/UserPool';
 
 //const img = { uri: "https://cdn.discordapp.com/attachments/958318179229257789/1002129999559675924/background.png" };
 //../../../assets/imgs/background.png
 
-function LoginScreen({ navigation }) {
+const LoginScreen = ({ navigation }) => {
+
+	const [email, setEmail] = useState("");
+	const [password, setPassword] = useState("");
+	
+	const onSubmit = () => {
+		console.log("hello");
+		const user = new CognitoUser({
+			Username: email,
+			Pool: UserPool
+		});
+
+		const authDetails = new AuthenticationDetails({
+			Username: email,
+			Password: password
+		});
+
+		user.authenticateUser(authDetails, {
+			onSuccess: (data) => {
+				console.log("onSuccess: ", data);
+				navigation.navigate("Home");
+			},
+			onFailure: (err) => {
+				console.error("onFailure: ", err);
+			},
+			newPasswordRequired: (data) => {
+				console.log("newPasswordRequired: ", data);
+			},
+		});
+	};
+
 	return (
 		<View style={{ flex: 1, alignItems: 'center', justifyContent: 'center' }}>
 			<View style={{ height: '92%', width: '100%' }}>
@@ -14,11 +46,13 @@ function LoginScreen({ navigation }) {
 					<TextInput
 						style={{ backgroundColor: 'white', width: '70%', alignSelf: 'center', marginTop: 20, borderRadius: 30, textAlign: 'center' }}
 						placeholder="email"
+						onChangeText={newEmail => setEmail(newEmail)}
 					/>
 					<TextInput
 						style={{ backgroundColor: 'white', width: '70%', alignSelf: 'center', marginTop: 10, borderRadius: 30, textAlign: 'center' }}
 						placeholder="password"
 						secureTextEntry={true}
+						onChangeText={newPassword => setPassword(newPassword)}
 					/>
 					<View style={{ flex: 0.2, flexDirection: 'row', alignItems: 'center', justifyContent: 'space-between', width: '70%', alignSelf: 'center', fontWeight: '500' }}>
 						<TouchableOpacity activeOpacity={ .7 } onPress={() => navigation.navigate('Home')}>
@@ -26,7 +60,7 @@ function LoginScreen({ navigation }) {
 						</TouchableOpacity>
 						<View style={{ flexDirection: 'row', alignItems: 'center' }}>
 							<Text style={{ color: 'white', fontWeight: '500', fontSize: 15 }}>New User?</Text>
-							<TouchableOpacity activeOpacity={ .7 } onPress={() => navigation.navigate('Sign Up')}>
+							<TouchableOpacity activeOpacity={ .7 } onPress={() => navigation.navigate('SignUp')}>
 								<Text style={{ color: '#00d4aaff', fontWeight: '500', fontSize: 15 }} onPress={() => navigation.navigate('SignUp')}>Sign Up</Text>
 							</TouchableOpacity>
 						</View>
@@ -48,7 +82,7 @@ function LoginScreen({ navigation }) {
 						height: '100%',
 						width: '100%'
 					}}
-					onPress={() => navigation.navigate('Home')}
+					onPress={onSubmit}
 				/>
 				{/* <Button
 					title="home"

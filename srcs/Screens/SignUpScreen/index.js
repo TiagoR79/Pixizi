@@ -1,8 +1,25 @@
-import * as React from 'react';
+import React, { useState } from 'react';
 import { View, Text, /* Button ,*/ ImageBackground, Image, TextInput, StyleSheet, TouchableOpacity } from 'react-native';
 import { Button } from '@rneui/base';
+import UserPool from '../../utils/UserPool';
 
-function SignUpScreen({ navigation }) {
+const SignUpScreen = ({ navigation }) => {
+	
+	const [email, setEmail] = useState("");
+	const [password, setPassword] = useState("");
+	
+	const onSubmit = () => {
+		console.log("hello");
+		UserPool.signUp(email, password, [], null, (err, data) => {
+			if(err) {
+				console.log("hello0000");
+				console.log(err);
+			}
+			console.log(data);
+			navigation.navigate('Login');
+		});
+	};
+
 	return (
 		<View style={{ flex: 1, alignItems: 'center', justifyContent: 'center' }}>
 			<View style={{ height: '92%', width: '100%', backgroundColor: 'white' }}>
@@ -20,15 +37,19 @@ function SignUpScreen({ navigation }) {
 					<TextInput
 						style={styles.input}
 						placeholder="Email"
+						value={email}
+						onChangeText={newEmail => setEmail(newEmail)}
 						placeholderTextColor={'black'}
 					/>
 					<TextInput
 						style={styles.input}
 						placeholder="Password"
 						secureTextEntry={true}
+						value={password}
+						onChangeText={newPassword => setPassword(newPassword)}
 						placeholderTextColor={'black'}
 					/>
-					<TextInput
+					{/* <TextInput
 						style={styles.input}
 						placeholder="Retype Password"
 						secureTextEntry={true}
@@ -43,7 +64,7 @@ function SignUpScreen({ navigation }) {
 						style={styles.input}
 						placeholder="Country"
 						placeholderTextColor={'black'}
-					/>
+					/> */}
 				</View>
 			</View>
 			<View style={{ height: '8%', width: '100%' , backgroundColor: '#00d4aaff' }}>
@@ -61,13 +82,8 @@ function SignUpScreen({ navigation }) {
 						height: '100%',
 						width: '100%'
 					}}
-					onPress={() => navigation.navigate('Home')}
+					onPress={onSubmit}
 				/>
-				{/* <Button
-					title="home"
-					color="#00d4aaff"
-					onPress={() => navigation.navigate('Home')}
-				/> */}
 			</View>
 		</View>
 	);
