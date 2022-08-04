@@ -13,7 +13,6 @@ const LoginScreen = ({ navigation }) => {
 	const [password, setPassword] = useState("");
 	
 	const onSubmit = () => {
-		console.log("hello");
 		const user = new CognitoUser({
 			Username: email,
 			Pool: UserPool
@@ -84,11 +83,6 @@ const LoginScreen = ({ navigation }) => {
 					}}
 					onPress={onSubmit}
 				/>
-				{/* <Button
-					title="home"
-					color="#00d4aaff"
-					onPress={() => navigation.navigate('Home')}
-				/> */}
 			</View>
 		</View>
 	);

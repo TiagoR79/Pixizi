@@ -13,9 +13,12 @@ import DetailsScreen from './srcs/Screens/DetailsScreen';
 import NavigationScreen from './srcs/Screens/NavigationScreen';
 
 
+
+
 const Stack = createNativeStackNavigator();
 
 function App() {
+
 	return (
 		<NavigationContainer>
 			<Stack.Navigator initialRouteName="Navigation"
