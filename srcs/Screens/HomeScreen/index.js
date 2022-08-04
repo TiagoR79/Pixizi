@@ -58,7 +58,7 @@ const HomeScreen = ({ navigation }) => {
 						height: '100%',
 						width: '100%'
 					}}
-					onPress={() => navigation.navigate('Home')}
+					onPress={() => navigation.navigate('Order')}
 				/>
 			</View>
 		</View>

@@ -30,6 +30,11 @@ function HomeScreen({ navigation }) {
 				color="#00d4aaff"
 				onPress={() => navigation.navigate('SignUp')}
 			/>
+			<Button
+				title="Go to Order"
+				color="#00d4aaff"
+				onPress={() => navigation.navigate('Order')}
+			/>
 		</View>
 	);
 }

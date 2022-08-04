@@ -11,6 +11,7 @@ import LoginScreen from './srcs/Screens/LoginScreen';
 import SignUpScreen from './srcs/Screens/SignUpScreen';
 import DetailsScreen from './srcs/Screens/DetailsScreen';
 import NavigationScreen from './srcs/Screens/NavigationScreen';
+import OrderScreen from './srcs/Screens/OrderScreen';
 
 
 
@@ -107,6 +108,28 @@ function App() {
 								<Image
 									source={require('./assets/settings.png')}
 									style={{ width: 27, height: 27 }}
+								/>
+							</TouchableOpacity>
+						)
+					})}
+				/>
+				<Stack.Screen
+					name="Order"
+					component={OrderScreen}
+					options={({navigation}) => ({
+						headerLeft: () => (
+							<TouchableOpacity activeOpacity={ .7 } onPress={() => navigation.navigate('Navigation')}>
+								<Image
+									source={require('./assets/settings.png')}
+									style={{ width: 27, height: 27 }}
+								/>
+							</TouchableOpacity>
+						),
+						headerRight: () => (
+							<TouchableOpacity activeOpacity={ .7 } onPress={() => navigation.navigate('Navigation')}>
+								<Image
+									source={require('./assets/profile.png')}
+									style={{ width: 20, height: 25, marginRight: '55%' }}
 								/>
 							</TouchableOpacity>
 						)
