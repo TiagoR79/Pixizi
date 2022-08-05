@@ -13,25 +13,26 @@ To Setup a development environment or to test the app using an emulator, use the
 
 After installing Android Studio, use the following guide to setup a virtual device:
 
-    - https://developer.android.com/studio/run/managing-avds
+    https://developer.android.com/studio/run/managing-avds
 
 To start the app:
 
-    - Install all the required dependencies using `npm install`;
-    - On a terminal window, in the root folder run `npm start`, leave running - This will start Metro, a JavaScript bundler that ships with React Native
-    - On a separate terminal window, run `npm run android`, this will build and deploy the app on the emulator;
+    1. Install all the required dependencies using `npm install`;
+    2. On a terminal window, in the root folder run `npm start`, leave running - This will start Metro, a JavaScript bundler that ships with React Native
+    3. On a separate terminal window, run `npm run android`, this will build and deploy the app on the emulator;
 
 The following libraries were used to simplify the development:
 
-    - https://reactnavigation.org/;
-    - https://reactnativeelements.com/.
+    https://reactnavigation.org/
+    https://reactnativeelements.com/
 
 ## Cloud Integration
 
 To Setup the AWS Cognito integration, an adaptation of the example of the following videos was used:
 
-    - https://www.youtube.com/watch?v=8WZmIdXZe3Q - (Sign Up);
-    - https://www.youtube.com/watch?v=yhD2XJVFQUg - (Log in);
+    https://www.youtube.com/watch?v=8WZmIdXZe3Q - (Sign Up);
+    
+    https://www.youtube.com/watch?v=yhD2XJVFQUg - (Log in);
 
 
 Future steps:
