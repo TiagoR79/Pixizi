@@ -1,5 +1,4 @@
 
-![alt text](https://github.com/TiagoR79/Pixizi/blob/main/assets/logo/logo2.png "Logo")
 
 This repository is the MVP for a Project called Pixizi that is being developed for the UPSKILL program. 
 The Goal is to create a Mobile Application fully hosted on AWS Cloud.
