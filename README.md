@@ -1,4 +1,5 @@
 
+
 This repository is the MVP for a Project called Pixizi that is being developed for the UPSKILL program. 
 The Goal is to create a Mobile Application fully hosted on AWS Cloud.
 
