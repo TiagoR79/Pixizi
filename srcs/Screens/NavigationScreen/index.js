@@ -8,7 +8,7 @@ function HomeScreen({ navigation }) {
 			<Button
 				title="Go to Home"
 				color="#00d4aaff"
-				onPress={() => navigation.navigate('Home')}
+				onPress={() => navigation.navigate('Login')}
 			/>
 			<Button
 				title="Go to Details"

@@ -9,14 +9,15 @@ const SignUpScreen = ({ navigation }) => {
 	const [password, setPassword] = useState("");
 	
 	const onSubmit = () => {
-		console.log("hello");
 		UserPool.signUp(email, password, [], null, (err, data) => {
 			if(err) {
-				console.log("hello0000");
 				console.log(err);
+				alert(err);
+			}
+			else {
+				navigation.navigate('Login');
 			}
 			console.log(data);
-			navigation.navigate('Login');
 		});
 	};
 

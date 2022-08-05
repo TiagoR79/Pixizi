@@ -22,7 +22,7 @@ function App() {
 
 	return (
 		<NavigationContainer>
-			<Stack.Navigator initialRouteName="Navigation"
+			<Stack.Navigator initialRouteName="Loading"
 				screenOptions={{
 					headerStyle: {
 					  backgroundColor: '#00d4aaff',
