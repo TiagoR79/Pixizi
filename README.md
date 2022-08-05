@@ -9,7 +9,7 @@ The app was not tested on ios.
 
 To Setup a development environment or to test the app using an emulator, use the following guide:
 
-    - https://reactnative.dev/docs/environment-setup.
+    - <https://reactnative.dev/docs/environment-setup>.
 
 After installing Android Studio, use the following guide to setup a virtual device:
 
