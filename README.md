@@ -26,6 +26,7 @@ The following libraries were used to simplify the development:
 
     https://reactnavigation.org/
     https://reactnativeelements.com/
+    https://github.com/react-native-modal/react-native-modal
 
 ## Cloud Integration
 
