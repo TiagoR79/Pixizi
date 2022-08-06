@@ -15,6 +15,7 @@ function Loading({ navigation }) {
 				style={{ width: 150, height: 150, alignSelf: 'center' }}
 				/>
 			<Text
+				style={{ color: 'white' }}
 				onPress={() => navigation.navigate('Login')}
 			> skip </Text>
 		</View>

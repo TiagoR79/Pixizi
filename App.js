@@ -12,6 +12,8 @@ import SignUpScreen from './srcs/Screens/SignUpScreen';
 import DetailsScreen from './srcs/Screens/DetailsScreen';
 import NavigationScreen from './srcs/Screens/NavigationScreen';
 import OrderScreen from './srcs/Screens/OrderScreen';
+import ProfileScreen from './srcs/Screens/ProfileScreen';
+import SettingsScreen from './srcs/Screens/SettingsScreen';
 
 
 
@@ -41,7 +43,7 @@ function App() {
 					component={NavigationScreen}
 					options={({navigation}) => ({
 						headerLeft: () => (
-							<TouchableOpacity activeOpacity={ .7 } onPress={() => navigation.navigate('Navigation')}>
+							<TouchableOpacity activeOpacity={ .7 } onPress={() => navigation.navigate('Settings')}>
 								<Image
 									source={require('./assets/settings.png')}
 									style={{ width: 27, height: 27 }}
@@ -49,7 +51,7 @@ function App() {
 							</TouchableOpacity>
 						),
 						headerRight: () => (
-							<TouchableOpacity activeOpacity={ .7 } onPress={() => navigation.navigate('Navigation')}>
+							<TouchableOpacity activeOpacity={ .7 } onPress={() => navigation.navigate('Profile')}>
 								<Image
 									source={require('./assets/profile.png')}
 									style={{ width: 20, height: 25, marginRight: '55%' }}
@@ -63,7 +65,7 @@ function App() {
 					component={HomeScreen}
 					options={({navigation}) => ({
 						headerLeft: () => (
-							<TouchableOpacity activeOpacity={ .7 } onPress={() => navigation.navigate('Navigation')}>
+							<TouchableOpacity activeOpacity={ .7 } onPress={() => navigation.navigate('Settings')}>
 								<Image
 									source={require('./assets/settings.png')}
 									style={{ width: 27, height: 27 }}
@@ -71,7 +73,7 @@ function App() {
 							</TouchableOpacity>
 						),
 						headerRight: () => (
-							<TouchableOpacity activeOpacity={ .7 } onPress={() => navigation.navigate('Navigation')}>
+							<TouchableOpacity activeOpacity={ .7 } onPress={() => navigation.navigate('Profile')}>
 								<Image
 									source={require('./assets/profile.png')}
 									style={{ width: 20, height: 25, marginRight: '55%' }}
@@ -90,7 +92,7 @@ function App() {
 					component={LoginScreen}
 					options={({navigation}) => ({
 						headerLeft: () => (
-							<TouchableOpacity activeOpacity={ .7 } onPress={() => navigation.navigate('Navigation')}>
+							<TouchableOpacity activeOpacity={ .7 } onPress={() => navigation.navigate('Settings')}>
 								<Image
 									source={require('./assets/settings.png')}
 									style={{ width: 27, height: 27 }}
@@ -104,7 +106,7 @@ function App() {
 					component={SignUpScreen}
 					options={({navigation}) => ({
 						headerLeft: () => (
-							<TouchableOpacity activeOpacity={ .7 } onPress={() => navigation.navigate('Navigation')}>
+							<TouchableOpacity activeOpacity={ .7 } onPress={() => navigation.navigate('Profile')}>
 								<Image
 									source={require('./assets/settings.png')}
 									style={{ width: 27, height: 27 }}
@@ -118,7 +120,7 @@ function App() {
 					component={OrderScreen}
 					options={({navigation}) => ({
 						headerLeft: () => (
-							<TouchableOpacity activeOpacity={ .7 } onPress={() => navigation.navigate('Navigation')}>
+							<TouchableOpacity activeOpacity={ .7 } onPress={() => navigation.navigate('Settings')}>
 								<Image
 									source={require('./assets/settings.png')}
 									style={{ width: 27, height: 27 }}
@@ -126,7 +128,7 @@ function App() {
 							</TouchableOpacity>
 						),
 						headerRight: () => (
-							<TouchableOpacity activeOpacity={ .7 } onPress={() => navigation.navigate('Navigation')}>
+							<TouchableOpacity activeOpacity={ .7 } onPress={() => navigation.navigate('Profile')}>
 								<Image
 									source={require('./assets/profile.png')}
 									style={{ width: 20, height: 25, marginRight: '55%' }}
@@ -135,7 +137,50 @@ function App() {
 						)
 					})}
 				/>
-				{/* <Stack.Screen name="" component={} /> */}
+				<Stack.Screen
+					name="Profile"
+					component={ProfileScreen}
+					options={({navigation}) => ({
+						headerLeft: () => (
+							<TouchableOpacity activeOpacity={ .7 } onPress={() => navigation.navigate('Settings')}>
+								<Image
+									source={require('./assets/settings.png')}
+									style={{ width: 27, height: 27 }}
+								/>
+							</TouchableOpacity>
+						),
+						headerRight: () => (
+							<TouchableOpacity activeOpacity={ .7 } onPress={() => navigation.navigate('Profile')}>
+								<Image
+									source={require('./assets/profile.png')}
+									style={{ width: 20, height: 25, marginRight: '55%' }}
+								/>
+							</TouchableOpacity>
+						)
+					})}
+				/>
+				<Stack.Screen
+					name="Settings"
+					component={SettingsScreen}
+					options={({navigation}) => ({
+						headerLeft: () => (
+							<TouchableOpacity activeOpacity={ .7 } onPress={() => navigation.navigate('Settings')}>
+								<Image
+									source={require('./assets/settings.png')}
+									style={{ width: 27, height: 27 }}
+								/>
+							</TouchableOpacity>
+						)/* ,
+						headerRight: () => (
+							<TouchableOpacity activeOpacity={ .7 } onPress={() => navigation.navigate('Profile')}>
+								<Image
+									source={require('./assets/profile.png')}
+									style={{ width: 20, height: 25, marginRight: '55%' }}
+								/>
+							</TouchableOpacity>
+						) */
+					})}
+				/>
 			</Stack.Navigator>
 		</NavigationContainer>
 	);
